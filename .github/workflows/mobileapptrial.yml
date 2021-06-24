@@ -20,5 +20,5 @@ jobs:
     steps:
       - name: Print Envs
         run: |
-          echo ${{ env.datafile}}
-          echo "${{ env.DY_UTIL }}
+          echo ${{ datafile}}
+          echo "${{ DY_UTIL }}
