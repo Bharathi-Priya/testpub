@@ -8,18 +8,15 @@ on:
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   mobileapp-test:
     runs-on: self-hosted
     env: 
       home: "/home/testws"
-      DY_UTIL: "${{ env.home }}/dymmobileapp"
+      DY_UTIL: "${{ home }}/dymmobileapp"
       Envir: "DEV"
-      datafile: "${{ env.home }}/config.json"
+      datafile: "${{ home }}/config.json"
     steps:
       - name: Print Envs
         run: |
