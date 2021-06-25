@@ -12,9 +12,9 @@ on:
 jobs:
   mobileapp-test:
     runs-on: self-hosted
-    with: 
+    env: 
       home: "/home/testws"
-      #DY_UTIL: "${{ home }}/dymmobileapp"
+      DY_UTIL: "${{ home }}/dymmobileapp"
       Envir: "DEV"
       #datafile: "${{ home }}/config.json"
     steps:
