@@ -7,6 +7,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
     branches: [ main ]
+  push:
+    branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -14,11 +16,13 @@ jobs:
     runs-on: self-hosted
     with: 
       home: "/home/testws"
-      #DY_UTIL: "${{ home }}/dymmobileapp"
+      DY_UTIL: "${{ env.home }}/dymmobileapp"
       Envir: "DEV"
-      #datafile: "${{ home }}/config.json"
+      datafile: "${{ env.home }}/config.json"
     steps:
       - name: Print Envs
         run: |
           echo ${{ env.Envir}}
-          echo "${{ env.home }}
+          echo ${{ env.home }}
+          echo ${{ env.datafile }}
+          echo ${{ env.DY_UTIL }}
