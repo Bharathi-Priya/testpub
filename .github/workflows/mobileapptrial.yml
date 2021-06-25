@@ -21,4 +21,4 @@ jobs:
       - name: Print Envs
         run: |
           echo ${{ env.Envir}}
-          echo "${{ env.home }}
+          echo "${{ home }}
