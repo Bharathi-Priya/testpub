@@ -14,7 +14,7 @@ on:
 jobs:
   mobileapp-test:
     runs-on: self-hosted
-    with: 
+    env: 
       home: "/home/testws"
       DY_UTIL: "${{ env.home }}/dymmobileapp"
       Envir: "DEV"
