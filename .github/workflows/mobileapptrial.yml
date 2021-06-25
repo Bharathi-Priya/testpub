@@ -16,13 +16,13 @@ jobs:
     runs-on: self-hosted
     env: 
       home: "/home/testws"
-      DY_UTIL: "${{ home }}/dymmobileapp"
+      DY_UTIL: "$home/dymmobileapp"
       Envir: "DEV"
-      datafile: "${{ home }}/config.json"
+      datafile: "$home/config.json"
     steps:
       - name: Print Envs
         run: |
-          echo ${{ env.Envir}}
-          echo ${{ env.home }}
-          echo ${{ env.datafile }}
-          echo ${{ env.DY_UTIL }}
+          echo "$Envir"
+          echo "$home"
+          echo "$datafile"
+          echo "$DY_UTIL"
