@@ -16,9 +16,9 @@ jobs:
     runs-on: self-hosted
     env: 
       home: "/home/testws"
-      DY_UTIL: "${{ env.home }}/dymmobileapp"
+      DY_UTIL: "${{ home }}/dymmobileapp"
       Envir: "DEV"
-      datafile: "${{ env.home }}/config.json"
+      datafile: "${{ home }}/config.json"
     steps:
       - name: Print Envs
         run: |
