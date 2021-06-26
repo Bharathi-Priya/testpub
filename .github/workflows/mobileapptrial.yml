@@ -31,7 +31,7 @@ jobs:
       - name: JSON to variables
         uses: antifree/json-to-variables@v1.0.1
         with:
-          filename: ${{ env.datafile }}
+          filename: ${{ env.steps1.datafile }}
           prefix: test
       - name: Show output
         run: echo "The name was ${{ env.test_name }}, ${{ env.test_age }}, ${{ env.test_car }}"
