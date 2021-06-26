@@ -20,7 +20,7 @@ jobs:
       - name: JSON to variables
         uses: antifree/json-to-variables@v1.0.1
         with:
-          filename: ${{ env.steps1.datafile }}
+          filename: ${{ env.datafile }}
           prefix: test
         env: 
            #home: "D:/"
