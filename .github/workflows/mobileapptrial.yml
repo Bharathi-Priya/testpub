@@ -10,7 +10,7 @@ on:
   push:
     branches: [ main ]
 env: 
-      home: "D:/"
+      home: "D:"
       Envir: "DEV"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,9 +25,9 @@ jobs:
           echo "$DY_UTIL"
         env: 
            #home: "D:/"
-           DY_UTIL: "${{ env.home }}/dymmobileapp"
+           DY_UTIL: "${{ env.home }}\dymmobileapp"
            #Envir: "DEV"
-           datafile: "${{ env.home }}/config.json"
+           datafile: "${{ env.home }}\config.json"
       - name: JSON to variables
         uses: antifree/json-to-variables@v1.0.1
         with:
