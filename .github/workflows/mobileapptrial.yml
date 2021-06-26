@@ -17,22 +17,21 @@ jobs:
   mobileapp-test:
     runs-on: self-hosted
     steps:
+      - name: JSON to variables
+        uses: antifree/json-to-variables@v1.0.1
+        with:
+          filename: ${{ env.steps1.datafile }}
+          prefix: test
+        env: 
+           #home: "D:/"
+           DY_UTIL: "${{ env.home }}\\dymmobileapp"
+           #Envir: "DEV"
+           datafile: "${{ env.home }}\\config.json"
+      - name: Show output
+        run: echo "The name was ${{ env.test_name }}, ${{ env.test_age }}, ${{ env.test_car }}"
       - name: Print Envs
         run: |
           echo "$Envir"
           echo "$home"
           echo "$datafile"
           echo "$DY_UTIL"
-        env: 
-           #home: "D:/"
-           DY_UTIL: "${{ env.home }}\\dymmobileapp"
-           #Envir: "DEV"
-           datafile: "${{ env.home }}\\config.json"
-      - name: JSON to variables
-        uses: antifree/json-to-variables@v1.0.1
-        with:
-          filename: ${{ env.steps1.datafile }}
-          prefix: test
-      - name: Show output
-        run: echo "The name was ${{ env.test_name }}, ${{ env.test_age }}, ${{ env.test_car }}"
-        
