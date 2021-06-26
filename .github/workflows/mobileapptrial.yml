@@ -9,16 +9,13 @@ on:
     branches: [ main ]
   push:
     branches: [ main ]
-
+env: 
+      home: "/home/testws"
+      Envir: "DEV"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   mobileapp-test:
     runs-on: ubuntu-latest
-    env: 
-      home: "/home/testws"
-      DY_UTIL: "${{ home }}/dymmobileapp"
-      Envir: "DEV"
-      datafile: "${{ home }}/config.json"
     steps:
       - name: Print Envs
         run: |
@@ -26,3 +23,8 @@ jobs:
           echo "$home"
           echo "$datafile"
           echo "$DY_UTIL"
+        env: 
+           home: "/home/testws"
+           DY_UTIL: "${{ env.home }}/dymmobileapp"
+           Envir: "DEV"
+           datafile: "${{ env.home }}/config.json"
