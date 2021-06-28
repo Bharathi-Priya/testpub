@@ -10,7 +10,7 @@ on:
   push:
     branches: [ main ]
 env: 
-      home: "D:"
+      home: "E:"
       Envir: "DEV"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -35,3 +35,16 @@ jobs:
           echo "$home"
           echo "$datafile"
           echo "$DY_UTIL"
+      - name: JSON to variables
+        uses: antifree/json-to-variables@v1.0.1
+        with:
+          filename: ${{ env.DY_FILE }}
+          prefix: data
+        env: 
+           artifactorytarget: ${{ env.data_GLOBAL_DY_BINARYREPONAME }}
+           DY_WINDIR: ${{ env.data_GLOBAL_DY_BASEDIR }}
+      - name: Clone mobile-app PRIVATE repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v1
+        with:
+          owner: 'Bharathi'
+          repository: 'testpub'
