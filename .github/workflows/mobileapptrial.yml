@@ -28,18 +28,14 @@ jobs:
            #Envir: "DEV"
            datafile: "${{ env.home }}\\config.json"
       - name: Show output
-        run: echo "The name was ${{ env.test_name }}, ${{ env.test_age }}, ${{ env.test_car }}"
+        run: echo "The name was ${{ env.data_GLOBAL_DY_BINARYREPONAME }}, ${{ env.data_GLOBAL_DY_BASEDIR }}"
       - name: Print Envs
         run: |
           echo "$Envir"
           echo "$home"
           echo "$datafile"
           echo "$DY_UTIL"
-      - name: JSON to variables
-        uses: antifree/json-to-variables@v1.0.1
-        with:
-          filename: ${{ env.DY_FILE }}
-          prefix: data
+          echo "$DY_WINDIR"
         env: 
            artifactorytarget: ${{ env.data_GLOBAL_DY_BINARYREPONAME }}
            DY_WINDIR: ${{ env.data_GLOBAL_DY_BASEDIR }}
