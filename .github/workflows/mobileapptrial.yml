@@ -31,16 +31,15 @@ jobs:
         run: echo "The name was ${{ env.data_GLOBAL_DY_BINARYREPONAME }}, ${{ env.data_GLOBAL_DY_BASEDIR }}"
       - name: Print Envs
         run: |
-          echo "$Envir"
-          echo "$home"
-          echo "$datafile"
-          echo "$DY_UTIL"
-          echo "$DY_WINDIR"
+          Write-Output $Envir
+          Write-Output $home
+          Write-Output $datafile
+          Write-Output $DY_UTIL
+          Write-Output $DY_WINDIR
         env: 
            artifactorytarget: ${{ env.data_GLOBAL_DY_BINARYREPONAME }}
            DY_WINDIR: ${{ env.data_GLOBAL_DY_BASEDIR }}
-      - name: Clone mobile-app PRIVATE repository
-        uses: GuillaumeFalourd/clone-github-repo-action@v1
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          owner: 'Bharathi'
-          repository: 'testpub'
+          path: ${{ home }}
