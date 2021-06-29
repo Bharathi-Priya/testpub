@@ -42,4 +42,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: ${{ home }}
+          path: ${{ env.home }}
