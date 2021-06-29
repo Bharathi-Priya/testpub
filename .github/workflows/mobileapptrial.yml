@@ -37,9 +37,10 @@ jobs:
           Write-Output $DY_UTIL
           Write-Output $DY_WINDIR
         env: 
-           artifactorytarget: ${{ env.data_GLOBAL_DY_BINARYREPONAME }}
-           DY_WINDIR: ${{ env.data_GLOBAL_DY_BASEDIR }}
+           artifactorytarget: ${{ env.test_GLOBAL_DY_BINARYREPONAME }}
+           DY_WINDIR: ${{ env.test_GLOBAL_DY_BASEDIR }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: ${{ env.home }}
+         repository: Bharathi-Priya/testpub
+ 
